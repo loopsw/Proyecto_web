@@ -1,0 +1,69 @@
+.page-section {
+    margin-top: 100px;
+    padding: 2rem;
+    min-height: 100vh;
+    min-width: 300px;
+}
+
+.individual {
+    width: 50%;
+    float: left;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+input,
+select,
+optgroup,
+textarea {
+    border-color: #48dbfb;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.individual p img {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.individual p {
+    font-family: Open Sans;
+    text-align: left;
+    padding: 0px;
+}
+
+.individual .boton_enviar {
+    display: block;
+    color: white;
+    font-size: 25px;
+    background-color: #48dbfb;
+    height: 50px;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.individual button:hoover {
+    background-color: thistle;
+}
+
+.individual img {
+    display: block;
+    margin-top: 30px;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.correct_email {
+    display: block;
+    background-color: green;
+    color: white;
+}
+
+incorrect_email {
+    display: block;
+    background-color: red;
+    color: white;
+}

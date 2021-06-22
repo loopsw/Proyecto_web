@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block ccs_import %} {% load static %}
+<link href="{% static 'services/css/style.css' %}" rel="stylesheet" /> {% endblock %} {% block content%}
+<main class="contenido col d-flex justify-content-center">
+    <div class="row">
+        {% for service in servicesList %}
+        <div class="col-sm-4">
+            <div class="card">
+                <img src="{{service.image.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{service.title}}</h5>
+                    <p class="card-text text-justify">{{service.content|safe|truncatewords:90|linebreaks}}</p>
+                    <p>LEER MÁS...</p>
+                    <a href="#" class="btn btn-primary">Ir al servicio...</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</main>
+
+{% endblock %}

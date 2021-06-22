@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Carruserl-->
+
+    <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
+        <!-- Masthead Heading-->
+        <ol class="carousel-indicators">
+        {% for slide_image in images %}
+            {% if forloop.first %}
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            {% else %}
+                <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter0}}"></li>
+            {% endif %}
+        {% endfor %}
+        </ol>
+        <div class="carousel-inner">
+            {% for slide_image in images %}
+                {% if forloop.first %}
+                    <div class="carousel-item active">
+                {% else %}
+                    <div class="carousel-item">
+                {% endif %}
+                    <img class="d-block w-100" src="{{slide_image.image.url}}" alt="Second slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{slide_image.title}}</h5>
+                        <p>{{slide_image.caption}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+
+
+    </div>
+
+    <!--logo tienedas-->
+    <div class="background-overlay text-blue py-5 text-justify text-white ">
+        <div class="container-tiendas mt-5">
+            {% load static %}
+            <a href="#"><img src="{% static 'img/tiendas_online.jpg' %}" alt="" /></a>
+
+        </div>
+    </div>
+
+    <!--unete-->
+    <div class="background-overlay bg-dark text-blue py-5 text-justify text-white ">
+        <div class="container-tiendas mt-5">
+            <h2 align="center">Unete y forma parte de esta experiencia </h2>
+
+            <div align="center"><a href="{% url 'contact' %}" class="btn btn-danger">Unirme ahora!</a></div>
+
+
+        </div>
+    </div>
+{% endblock %}
